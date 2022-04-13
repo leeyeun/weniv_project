@@ -1,0 +1,75 @@
+/* font */
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* reset */
+body, h2, p{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+/* ir */
+.blind{
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+/*  */
+body{
+    background-color: #F2F2F2;
+    font-family: 'SpoqaHanSansNeo-Regular';
+}
+.container{
+    width: 520px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid #C4C4C4;
+    background-color: #FFFFFF;
+    margin: 40px auto;
+    /* text-align: center; */
+}
+.cont-header{
+    /* display: flex; */
+    padding: 20px 0 18px;
+    border-bottom: 1px solid #C4C4C4;
+    text-align: center;
+}
+.text-header{
+    line-height: 20px;
+    font-weight: 500;
+}
+.img-close{
+    width: 16px;
+    height: 16px;
+    float: right;
+}
+.cont-section{
+    padding: 26px 24px;
+}
+.text-section{
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+    padding-bottom: 24px;
+}
+.cont-loginform{
+    /* display: flex;
+    flex-direction: column; */
+}
+.input-login{
+    padding: 15px;
+    
+    /* width: 100%; */
+
+}
+.input-password{
+    padding: 15px;
+}

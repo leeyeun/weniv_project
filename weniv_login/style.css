@@ -1,0 +1,59 @@
+/* font */
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* reset */
+body, h2, p{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+
+/* ir */
+.blind{
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+body{
+    background-color: #F2F2F2;
+    font-family: 'SpoqaHanSansNeo-Regular';
+}
+.cont-login{
+    width: 500px;
+    background-color: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 280px auto;
+    padding: 38px 30px 30px 30px;
+    text-align: center;
+}
+
+.img-logo{
+    filter: invert(37%) sepia(96%) saturate(2394%) hue-rotate(202deg) brightness(101%) contrast(86%);
+    width: 122px;
+    height: 24px;
+}
+.text-login{
+    line-height: 20px;
+    margin: 30px 0 32px;
+}
+.link-login{
+    display: block;
+    font-weight: 700;
+    color: white;
+    background-color: #2F80ED;
+    border-radius: 5px;
+    padding: 17px 0 15px;
+    font-size: 22px;
+    line-height: 28px;
+}
