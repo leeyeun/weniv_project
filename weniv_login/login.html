@@ -12,25 +12,34 @@
         <h2 class="blind">위니브 로그인</h2>
         <header class="cont-header">
             <p class="text-header">로그인 또는 회원가입</p>
-            <img class="img-close" src="images/close.png" alt="">
+            <a href="/weniv_login/index.html" class="link-close">
+                <img class="img-close" src="images/close.png" alt="">
+            </a>
         </header>
         <section class="cont-section">
             <h2 class="text-section">위니브에서 여러분의 궁금증을 해결하세요!:)</h2>
-            <!-- <form action="post" class="cont-loginform"> -->
+            <form action="post" class="cont-loginform">
                 <input type="text" class="input-login" placeholder="아이디" >
                 <input type="password" class="input-password" placeholder="비밀번호">
-                <input type="checkbox" class="input-check" name="check_login" id="check-login">
-                <label for="check-login">로그인 상태 유지</label>
-                <a href="#">로그인</a>
-            <!-- </form> -->
+                
+                <div class="cont-check">
+                    <input type="checkbox" class="input-check" name="check_login" id="check-login">
+                    <label for="check-login" class="label-check">로그인 상태 유지</label>
+                </div>
+                
+                <a href="#" class="btn-login">로그인</a>
+            </form>
             
-            <a href="#">회원가입</a>
-            <a href="#">아이디/비밀번호 찾기</a>
-            <p>또는</p>
-            <a href="#" class="">구글 계정으로 로그인</a>
-            <a href="#">페이스북 계정으로 로그인</a>
-            <a href="#">네이버 계정으로 로그인</a>
-            <a href="#">카카오톡 계정으로 로그인</a>
+            <div class="cont-find">
+                <a href="#" class="link-join">회원가입</a>
+                <a href="#" class="link-find">아이디/비밀번호 찾기</a>
+            </div>
+            
+            <p class="text-or">또는</p>
+            <a href="#" class="google-login api">구글 계정으로 로그인</a>
+            <a href="#" class="facebook-login api">페이스북 계정으로 로그인</a>
+            <a href="#" class="naver-login api">네이버 계정으로 로그인</a>
+            <a href="#" class="kakao-login api">카카오톡 계정으로 로그인</a>
         </section>
     </article>
 </body>
