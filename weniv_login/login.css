@@ -6,12 +6,15 @@
     font-style: normal;
 }
 /* reset */
-body, h2, p, input{
+body, h2, p, input,ul{
     padding: 0;
     margin: 0;
 }
 a{
     text-decoration: none;
+}
+ul {
+	list-style: none;
 }
 /* ir */
 .blind{
