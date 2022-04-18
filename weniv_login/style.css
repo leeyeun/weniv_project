@@ -34,14 +34,13 @@ body{
     border-radius: 5px;
     box-sizing: border-box;
     margin: 280px auto;
-    padding: 38px 30px 30px 30px;
+    padding: 34px 30px 30px 30px;
     text-align: center;
 }
 
 .img-logo{
     filter: invert(37%) sepia(96%) saturate(2394%) hue-rotate(202deg) brightness(101%) contrast(86%);
     width: 122px;
-    height: 24px;
 }
 .text-login{
     line-height: 20px;
