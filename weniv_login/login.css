@@ -163,8 +163,6 @@ input[type=checkbox]:checked + label{
     width: 210px;
     height: 1px;
     background-color: #767676;
-    align-items: center;
-    text-align: center;
     vertical-align: middle;
     margin-right: 12px;
 }
