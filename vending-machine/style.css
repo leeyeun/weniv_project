@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
 button{
     padding: 0;
+}
+*{
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 body{
@@ -24,14 +28,24 @@ body{
     height: 545px;
     background-color: #FFFFFF;
     margin-right: 28px;
+    padding: 0 27px;
+    box-sizing: border-box;
 }
 
 .cont-left .list-ul{
-    margin: 31px 27px 0px;
+    margin-top: 31px;
 }
 .list-li{
+    float: left;
     width: 94px;
     box-sizing: border-box;
+}
+.list-li:nth-child(1),
+.list-li:nth-child(2),
+.list-li:nth-child(4),
+.list-li:nth-child(5){
+    margin-right: 12px;
+    margin-bottom: 12px;
 }
 .btn-cola{
     width: 94px;
@@ -40,8 +54,18 @@ body{
     border-radius: 10px;
     box-sizing: border-box;
 }
+.btn-cola yellow{
+    width: 94px;
+    background-color: #FFFFFF;
+    border: 1px solid #c4c4c4;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+.btn-cola:focus{
+    outline: 3px solid #6327FE;
+}
 .btn-cola:hover{
-    border: 3px solid #6327FE;
+    outline: 3px solid #6327FE;
 }
 .btn-cola img{
     width: 36px;
@@ -49,15 +73,108 @@ body{
 }
 .btn-cola .cola-name{
     font-size: 9px;
-
+    padding: 3px 10px 7px;
+    line-height: 13px;
 }
 .btn-cola .cola-price{
     background-color: #6327FE;
     color: #FFFFFF;
     border-radius: 50px;
-    padding: 5px 15px;
+    padding: 4px 15px 5px;
     margin-bottom: 9px;
+    font-size: 12px;
+    display: inline-block;
+    line-height: 12px;
 }
+.balance-price{
+    float: left;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-weight: 500;
+    padding: 7px 10px 6px 10px;
+    width: 200px;
+    font-size: 14px;
+    background-color: #EAE8FE;
+    margin-bottom: 11px;
+    line-height: 20px;
+}
+.balance-price::after{
+    content: '1,000원';
+    float: right;
+}
+.list-btn{
+    float: right;
+    width: 94px;
+    background-color: #FFFFFF;
+    border: 1px solid #c4c4c4;
+    border-radius: 5px;
+    padding: 6px 5px 6px 5px;
+    font-size: 13px;
+    line-height: 19px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-weight: 500;
+    box-sizing: border-box;
+}
+.list-input{
+    width: 200px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+    line-height: 19px;
+    padding: 6px;
+    margin-bottom: 11px;
+}
+.btn-submit{
+    float: right;
+    width: 94px;
+    height: 106px;
+    background-color: #6327FE;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    /* margin-top: 12px; */
+}
+.list-scroll-ul{
+    float: left;
+    width: 200px;
+    height: 106px;
+    background-color: #EAE8FE;
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.list-scroll-ul::-webkit-scrollbar{
+    width: 4px;
+}
+.list-scroll-ul::-webkit-scrollbar-thumb{
+    background-color: #FFFFFF;
+    height: 25%;
+    border-radius: 10px;
+}
+.list-cola{
+    width: 170px;
+    background-color: #FFFFFF;
+    margin-bottom: 6px;
+    box-sizing: border-box;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.list-cola img{
+    float: left;
+    width: 18px;
+    height: 33px;
+}
+.list-get-cola{
+    font-size: 9px;
+    line-height: 33px;
+    padding: 18px 10px;
+}
+
+
 .wrapper .cont-right{
     float: right;
     width: 360px;
@@ -72,7 +189,7 @@ body{
     margin: 9px 27px;
     padding: 6px 10px;
     background-color: #EAE8FE;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 14px;
     line-height: 20px;
     border-radius: 5px;
@@ -93,10 +210,18 @@ body{
     border-radius: 5px;
     margin: 0 auto;
     border: 1px solid #c4c4c4;
-    /* overflow-y: scroll; */
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.cola-ul::-webkit-scrollbar{
+    width: 10px;
+}
+.cola-ul::-webkit-scrollbar-thumb{
+    background-color: #FFFFFF;
+    height: 25%;
+    border-radius: 10px;
 }
 .cola-items{
-    /* margin: 0 auto; */
     width: 276px;
     box-sizing: border-box;
     background-color: #FFFFFF;

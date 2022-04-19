@@ -7,6 +7,9 @@
     <title>벤딩머신</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <section class="cont-cola">
@@ -32,7 +35,7 @@
                         </button>
                     </li>
                     <li class="list-li">
-                        <button class="btn-cola" type="button">
+                        <button class="btn-cola yellow" type="button">
                             <img src="images/Yellow_Cola.svg" alt="노란색 콜라">
                             <p class="cola-name">Yellow_Cola</p>
                             <p class="cola-price">1000원</p>
@@ -53,13 +56,31 @@
                         </button>
                     </li>
                     <li class="list-li">
-                        <button class="btn-cola" type="button">
+                        <button class="btn-cola orange" type="button">
                             <img src="images/Orange_Cola.svg" alt="오렌지 콜라">
                             <p class="cola-name">Orange_Cola</p>
                             <p class="cola-price">1000원</p>
                         </button>
                     </li>
                 </ul>
+                <span class="balance-price">잔액 : </span>
+                <button class="list-btn">거스름돈 반환</button>
+                <input type="text" placeholder="입금액 입력" class="list-input">
+                <label for=""></label>
+                <button class="list-btn">입금</button>
+                <ul class="list-scroll-ul">
+                    <li class="list-cola">
+                        <img src="images/Original_Cola.svg" alt="오리지널 콜라">
+                        <span class="list-get-cola">Original_Cola</span>
+                        <span class="get-item-sum">1</span>
+                    </li>
+                    <li class="list-cola">
+                        <img src="images/Green_Cola.svg" alt="초록색 콜라">
+                        <span class="list-get-cola">Green_Cola</span>
+                        <span class="get-item-sum">2</span>
+                    </li>
+                </ul>
+                <button class="btn-submit">획득</button>
             </section>
             <section class="cont-right">
                 <section class="cont-myMoney">
