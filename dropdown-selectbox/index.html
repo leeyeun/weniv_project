@@ -61,13 +61,20 @@
         }
         .list-select .options{
             margin: 5px 8px;
-            padding: 7px 10px;
+            /* padding: 7px 10px; */
         }
-        .options:hover{
+        
+        .btn-option{
+            width: 100%;
+            border: none;
+            background-color: #ffffff;
+            padding: 7px 10px;
+            text-align: left;
+        }
+        .btn-option:hover{
             /* width: 184px; */
             border-radius: 8px;
             background-color: #F8E4FF;
-
         }
     </style>
 </head>
@@ -75,11 +82,21 @@
     <div class="cont-box">
         <button class="btn-select closed">최애 프로그래밍 언어</button>
         <ul class="list-select">
-            <li class="options">Python</li>
-            <li class="options">Java</li>
-            <li class="options">JavaScript</li>
-            <li class="options">C#</li>
-            <li class="options">C/C++</li>
+            <li class="options">
+                <button class="btn-option">Python</button>
+            </li>
+            <li class="options">
+                <button class="btn-option">Java</button>
+            </li>
+            <li class="options">
+                <button class="btn-option">JavaScript</button>
+            </li>
+            <li class="options">
+                <button class="btn-option">C#</button>
+            </li>
+            <li class="options">
+                <button class="btn-option">C/C++</button>
+            </li>
         </ul>
     </div>
 <script>
