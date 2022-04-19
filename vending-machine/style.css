@@ -1,0 +1,47 @@
+body{
+    background-color: #EAE8FE;
+}
+.cont-header{
+    width: 386px;
+    margin: 0 auto;
+}
+.cont-header img{
+    width: 386px;
+}
+.wrapper{
+    width: 748px;
+    margin: 0 auto;
+    /* display: flex; */
+}
+.wrapper .cont-left{
+    float: left;
+    width: 360px;
+    height: 545px;
+    background-color: #FFFFFF;
+    margin-right: 28px;
+}
+.wrapper .cont-right{
+    float: right;
+    width: 360px;
+    background-color: #FFFFFF;
+}
+.cont-right .cont-myMoney{
+    /* margin-bottom: 20px; */
+    overflow: hidden;
+}
+.cont-myMoney .text-money{
+    margin: 9px 27px;
+    padding: 6px 10px;
+    background-color: #EAE8FE;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+}
+.cont-getItem{
+    margin-top: 20px;
+}
+.text-getItem{
+    font-weight: 700;
+    margin: 25px 0px;
+    text-align: center;
+}
