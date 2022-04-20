@@ -33,11 +33,12 @@ body{
 .wrapper .cont-left{
     float: left;
     width: 360px;
-    height: 545px;
+    /* height: 545px; */
     background-color: #FFFFFF;
     margin-right: 28px;
     padding: 0 27px;
     box-sizing: border-box;
+    padding-bottom: 36px;
 }
 
 .cont-left .list-ul{
