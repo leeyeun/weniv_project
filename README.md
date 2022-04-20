@@ -6,3 +6,6 @@ https://leeyeun.github.io/weniv_login/weniv_login/
 
 - 드롭박스
 https://leeyeun.github.io/weniv_login/dropdown-selectbox/
+
+- 벤딩머신
+https://leeyeun.github.io/weniv_login/vending-machine/
