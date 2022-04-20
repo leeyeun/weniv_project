@@ -208,7 +208,7 @@ body{
     border-radius: 5px;
 }
 .cont-myMoney .text-money::after{
-    content: '1,000원';
+    content: '25,000원';
     float: right;
 }
 .cont-right .cont-getItem{
