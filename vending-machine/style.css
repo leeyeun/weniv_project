@@ -2,6 +2,14 @@
 button{
     padding: 0;
 }
+.txt-hide {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+}
 *{
     font-family: 'Noto Sans KR', sans-serif;
 }
@@ -75,6 +83,7 @@ body{
     font-size: 9px;
     padding: 3px 10px 7px;
     line-height: 13px;
+    display: block;
 }
 .btn-cola .cola-price{
     background-color: #6327FE;
