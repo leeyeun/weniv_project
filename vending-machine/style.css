@@ -222,6 +222,9 @@ body {
   float: right;
   font-weight: bold;
 }
+.txt-won {
+  float: right;
+}
 
 .cont-right .cont-getItem {
   background-color: #ffffff;

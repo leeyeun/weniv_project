@@ -22,7 +22,7 @@
       </header>
       <div class="wrapper">
         <section class="cont-left">
-          <h2 class="txt-hide">리스트</h2>
+          <h2 class="txt-hide">콜라 자판기</h2>
           <ul class="list-ul">
             <li class="list-li">
               <button class="btn-cola" type="button">
@@ -68,20 +68,21 @@
             </li>
           </ul>
           <section class="cont-buy">
+            <h2 class="txt-hide">음료수 구매하기</h2>
             <div class="balance-price">
               잔액 :
-              <span class="txt-balance">1,000원</span>
+              <span class="txt-balance">0</span>
             </div>
             <button class="list-btn">거스름돈 반환</button>
             <input
               class="list-input"
-              type="text"
+              type="number"
               placeholder="입금액 입력"
-              onkeyup="onInput()"
             />
             <button class="list-btn">입금</button>
+            <h2 class="txt-hide">선택한 음료 리스트</h2>
             <ul class="list-item-staged">
-              <li class="cola-items">
+              <!-- <li class="cola-items">
                 <img src="images/Original_Cola.svg" alt="오리지널 콜라" />
                 <span class="txt-item">Original_Cola</span>
                 <span class="num-counter">1</span>
@@ -90,24 +91,25 @@
                 <img src="images/Green_Cola.svg" alt="초록색 콜라" />
                 <span class="txt-item">Green_Cola</span>
                 <span class="num-counter">2</span>
-              </li>
+              </li> -->
             </ul>
-            <button class="btn-submit">획득</button>
+            <button type="button" class="btn-submit">획득</button>
           </section>
         </section>
         <section class="cont-right">
-          <h2 class="txt-hide">벤딩머신 오른쪽</h2>
+          <h2 class="txt-hide">벤딩머신 마이페이지</h2>
           <section class="cont-myMoney">
             <h2 class="txt-hide">벤딩머신 소지금</h2>
-            <div class="info-mymoney">
+            <p class="info-mymoney">
               소지금 :
-              <span class="txt-mymoney"></span>
-            </div>
+              <span class="txt-won">원</span>
+              <span class="txt-mymoney">50000</span>
+            </p>
           </section>
           <section class="cont-getItem">
             <h2 class="text-getItem">획득한 음료</h2>
             <ul class="list-item-staged">
-              <li class="cola-items">
+              <!-- <li class="cola-items">
                 <img src="images/Original_Cola.svg" alt="오리지널 콜라" />
                 <span class="txt-item">Original_Cola</span>
                 <span class="num-counter">1</span>
@@ -126,9 +128,9 @@
                 <img src="images/Violet_Cola.svg" alt="보라색 콜라" />
                 <span class="txt-item">Violet_Cola</span>
                 <span class="num-counter">5</span>
-              </li>
+              </li> -->
             </ul>
-            <strong class="sumPrice">총금액 : 9,000원</strong>
+            <strong class="sumPrice">총금액 : </strong>
           </section>
         </section>
       </div>
