@@ -1,6 +1,6 @@
 ## 벤딩 머신
 - 배포
-https://leeyeun.github.io/weniv_project/vending-machine/
+https://leeyeun.github.io/weniv_project/vending-machine/src/index.html
 
 ## weniv_login
 - 배포
