@@ -44,6 +44,12 @@ const myMoney = document.querySelector(".txt-mymoney");
 const listInput = document.querySelector(".list-input");
 const colaName = document.querySelectorAll(".cola-name");
 
+const depositBtn = document.querySelector(".list-btn.deposit"); //입금버튼
+const returnBtn = document.querySelector(".list-btn.return"); //거스름돈 반환 버튼
+const getBtn = document.querySelector(".btn-submit"); //획득 버튼
+const balance = document.querySelector(".txt-balance"); //잔액
+const total = document.querySelector("sumPrice"); //총금액 버튼
+
 const machineDrinkList = document.querySelectorAll(".list-ul li"); //음료
 
 let userMoney = 50000; //초기 소지금
