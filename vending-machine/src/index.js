@@ -63,15 +63,33 @@ myMoney.innerText = userMoney;
 
 //입금액
 depositBtn.addEventListener("click", () => {
-  let inpDeposit = parseInt(listInput.value);
+  let inpDeposit = parseInt(listInput.value); //입력하는 금액
   let check = /^[0-9]+$/; // 숫자인지 확인
   if (check.test(inpDeposit)) {
     countMoney += inpDeposit;
-    balance.innerText = countMoney;
+    userMoney -= inpDeposit; //소지금 변화
+
     listInput.value = ""; //input창에 남은 금액 없애기
 
-    userMoney -= inpDeposit; //소지금 변화
+    balance.innerText = countMoney;
     myMoney.innerText = userMoney;
+  } else {
+    alert("숫자를 입력하세요");
+  }
+});
+
+//거스름돈 반환
+returnBtn.addEventListener("click", () => {
+  if (countMoney === 0) {
+    alert("반환할 금액이 없습니다.");
+    listInput.value = ""; //input창에 남은 금액 없애기
+  } else {
+    //거스름돈 소지금에 추가
+    userMoney += countMoney;
+    countMoney = 0;
+
+    myMoney.innerText = userMoney;
+    balance.innerText = countMoney;
   }
 });
 
