@@ -57,7 +57,7 @@ let userMoney = 50000; //초기 소지금
 let countMoney = 0; //현재잔액
 
 let allMoney = 0; //총금액
-
+let plusMoney = 0;
 //소지금
 myMoney.innerText = userMoney;
 
@@ -66,7 +66,7 @@ depositBtn.addEventListener("click", () => {
   let inpDeposit = parseInt(listInput.value); //입력하는 금액
   let check = /^[0-9]+$/; // 숫자인지 확인
   if (check.test(inpDeposit)) {
-    countMoney += inpDeposit;
+    countMoney += inpDeposit; //잔액 추가
     userMoney -= inpDeposit; //소지금 변화
 
     listInput.value = ""; //input창에 남은 금액 없애기
@@ -126,15 +126,16 @@ machineDrinkList.forEach((drinkLi) => {
 
         listColaItemUl.appendChild(cola_list);
       } else if (drink[name].sellcount > 1) {
-        console.log(drinkName);
         const countNum = document.querySelector(".num-counter");
         countNum.innerText = drink[name].sellcount;
       }
     }
 
     drink[name].sellcount++;
-    console.log("count : ", drink[name].count);
     drink[name].count--;
+    countMoney -= drink[name].price;
+    plusMoney += drink[name].price;
+    balance.innerText = countMoney;
     if (drink[name].count < 0) {
       drinkLi.childNodes[1].classList.add("sold-out");
       drink[name].count = 0;
@@ -143,6 +144,34 @@ machineDrinkList.forEach((drinkLi) => {
 });
 
 //획득
-getBtn.addEventListener("click", () => {
-  console.log(listColaItemUl);
+getBtn.addEventListener("click", (e) => {
+  const getItemList = document.querySelector(".list-get-item-staged");
+  for (let i = 0; i < listColaItemUl.childNodes.length; i++) {
+    // console.log(getItemList.appendChild(listColaItemUl.childNodes));
+    // getItemList.insertAdjacentElement(listColaItemUl.childNodes);
+    const name = e.currentTarget.dataset;
+    console.log(e.currentTarget);
+    console.log(e.target);
+    // const cola_list = document.createElement("li");
+    //   const cola_image = document.createElement("img");
+    //   const cola_name = document.createElement("span");
+    //   const cola_count = document.createElement("span");
+    //   const colaUrl = `/vending-machine/images/${name}.svg`;
+    //     cola_list.classList.add("cola-items");
+    //     cola_image.setAttribute("src", colaUrl);
+    //     cola_image.setAttribute("alt", "오리지널 콜라");
+    //     cola_name.classList.add("txt-item");
+    //     cola_name.innerText = name;
+    //     cola_count.classList.add("num-counter");
+    //     cola_count.innerText = drink[name].sellcount;
+    //     cola_list.appendChild(cola_image);
+    //     cola_list.appendChild(cola_name);
+    //     cola_list.appendChild(cola_count);
+
+    //     listColaItemUl.appendChild(cola_list);
+  }
+  //총금액
+  allMoney += plusMoney;
+  const totalMoney = document.querySelector(".total-money");
+  totalMoney.innerText = allMoney + "원";
 });
