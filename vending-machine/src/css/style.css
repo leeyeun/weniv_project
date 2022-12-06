@@ -162,7 +162,8 @@ body {
   grid-column: 1/3;
 }
 
-.list-item-staged {
+.list-item-staged,
+.list-get-item-staged {
   background-color: #eae8fe;
   border-radius: 5px;
   border: 1px solid #c4c4c4;
@@ -231,16 +232,18 @@ body {
   padding: 0 27px 23px;
 }
 
-.cont-getItem .list-item-staged {
+.cont-getItem .list-get-item-staged {
   height: 364px;
   grid-column: 1/3;
 }
 
-.list-item-staged::-webkit-scrollbar {
+.list-item-staged::-webkit-scrollbar,
+.list-get-item-staged::-webkit-scrollbar {
   width: 5px;
 }
 
-.list-item-staged::-webkit-scrollbar-thumb {
+.list-item-staged::-webkit-scrollbar-thumb,
+list-get-item-staged::-webkit-scrollbar-thumb {
   background-color: #ffffff;
   height: 25%;
   border-radius: 10px;

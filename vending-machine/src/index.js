@@ -1,49 +1,49 @@
 import drink from "./drink.js";
 // console.log(cola[0]);
 
-let colaData = [
-  {
-    colaName: "Original_Cola",
-    price: 1000,
-    count: 10,
-    sellcount: 1,
-  },
-  {
-    colaName: "Violet_Cola",
-    price: 1000,
-    count: 9,
-    sellcount: 1,
-  },
-  {
-    colaName: "Yellow_Cola",
-    price: 1000,
-    count: 8,
-    sellcount: 1,
-  },
-  {
-    colaName: "Cool_Cola",
-    price: 1000,
-    count: 7,
-    sellcount: 1,
-  },
-  {
-    colaName: "Green_Cola",
-    price: 1000,
-    count: 6,
-    sellcount: 1,
-  },
-  {
-    colaName: "Orange_Cola",
-    price: 1000,
-    count: 5,
-    sellcount: 1,
-  },
-];
+// let colaData = [
+//   {
+//     colaName: "Original_Cola",
+//     price: 1000,
+//     count: 10,
+//     sellcount: 1,
+//   },
+//   {
+//     colaName: "Violet_Cola",
+//     price: 1000,
+//     count: 9,
+//     sellcount: 1,
+//   },
+//   {
+//     colaName: "Yellow_Cola",
+//     price: 1000,
+//     count: 8,
+//     sellcount: 1,
+//   },
+//   {
+//     colaName: "Cool_Cola",
+//     price: 1000,
+//     count: 7,
+//     sellcount: 1,
+//   },
+//   {
+//     colaName: "Green_Cola",
+//     price: 1000,
+//     count: 6,
+//     sellcount: 1,
+//   },
+//   {
+//     colaName: "Orange_Cola",
+//     price: 1000,
+//     count: 5,
+//     sellcount: 1,
+//   },
+// ];
 
 const myMoney = document.querySelector(".txt-mymoney"); //가지고 있는 소지금
 const listInput = document.querySelector(".list-input"); //입금액 입력
 // const colaName = document.querySelectorAll(".cola-name");
-
+const listColaItemUl = document.querySelector(".list-item-staged"); //음료 버튼 클릭시 ul
 const depositBtn = document.querySelector(".list-btn.deposit"); //입금버튼
 const returnBtn = document.querySelector(".list-btn.return"); //거스름돈 반환 버튼
 const getBtn = document.querySelector(".btn-submit"); //획득 버튼
@@ -104,7 +104,6 @@ machineDrinkList.forEach((drinkLi) => {
     } else if (drink[name].count === 0) {
       alert("품절된 상품입니다.");
     } else {
-      const listColaItemUl = document.querySelector(".list-item-staged");
       const cola_list = document.createElement("li");
       const cola_image = document.createElement("img");
       const cola_name = document.createElement("span");
@@ -141,4 +140,9 @@ machineDrinkList.forEach((drinkLi) => {
       drink[name].count = 0;
     }
   });
+});
+
+//획득
+getBtn.addEventListener("click", () => {
+  console.log(listColaItemUl);
 });
