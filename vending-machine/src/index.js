@@ -93,101 +93,52 @@ returnBtn.addEventListener("click", () => {
   }
 });
 
-//음료 클릭시 list 입력
+//콜라 버튼
 machineDrinkList.forEach((drinkLi) => {
   drinkLi.addEventListener("click", (e) => {
-    const { drinkName, price, count } = e.target.dataset;
-    console.log("drinkName", drinkName);
-    console.log("name", drink[drinkName]);
-    // console.log(name);
-    // console.log(price);
-    // console.log(count);
-    // const drinkName = drinkLi.dataset.drinkName;
-    // const drinkCount = colaData.sellcount;
+    const name = e.currentTarget.dataset.drinkName;
+    console.log("sellcount : ", drink[name].sellcount);
+    if (countMoney < 1000) {
+      alert("잔액이 부족합니다.");
+      return;
+    } else if (drink[name].count === 0) {
+      alert("품절된 상품입니다.");
+    } else {
+      const listColaItemUl = document.querySelector(".list-item-staged");
+      const cola_list = document.createElement("li");
+      const cola_image = document.createElement("img");
+      const cola_name = document.createElement("span");
+      const cola_count = document.createElement("span");
+      const colaUrl = `/vending-machine/images/${name}.svg`;
+      if (drink[name].sellcount === 1) {
+        cola_list.classList.add("cola-items");
+        cola_list.setAttribute("data-name", name);
+        cola_list.setAttribute("data-price", drink[name].price);
+        cola_list.setAttribute("data-sellcount", drink[name].sellcount);
+        cola_image.setAttribute("src", colaUrl);
+        cola_image.setAttribute("alt", "오리지널 콜라");
+        cola_name.classList.add("txt-item");
+        cola_name.innerText = name;
+        cola_count.classList.add("num-counter");
+        cola_count.innerText = drink[name].sellcount;
+        cola_list.appendChild(cola_image);
+        cola_list.appendChild(cola_name);
+        cola_list.appendChild(cola_count);
 
-    const itemLi = drinkLi.childNodes[1];
-    // console.log(e.currentTarget.childNodes);
-
-    // countPlus(drinkName);
-
-    colaData.forEach((colaData) => {
-      // console.log("drinkName", drinkName);
-      // console.log(colaData.colaName);
-      if (colaData.colaName === drinkName) {
-        console.log(colaData.colaName);
-        console.log(colaData.count);
-        let countSellData = colaData.sellcount;
-        const countData = colaData.count;
-        console.log("countData", countData);
-        if (colaData.sellcount <= 10) {
-          console.log("countData", countData);
-          console.log("countSellData", countSellData);
-          colaData.sellcount++;
-          // console.log(colaData.sellcount);
-        }
-
-        // console.log(colaData.sellcount);
-        // let countData = colaData.sellcount;
-        console.log(countData);
-        // if (colaData.count) {
-        //   colaData.sellcount++;
-        // }
-      }
-      // console.log(colaData.sellcount);
-    });
-    // console.log("countData", countData);
-    createDrink(drinkName);
-    soldOutCheck(drinkName, itemLi);
-  });
-});
-
-//콜라 버튼
-
-//콜라 버튼 클릭시 생성
-const createDrink = (name) => {
-  const listColaItemUl = document.querySelector(".list-item-staged");
-  const cola_list = document.createElement("li");
-  const cola_image = document.createElement("img");
-  const cola_name = document.createElement("span");
-  const cola_count = document.createElement("span");
-
-  const colaUrl = `/vending-machine/images/${name}.svg`;
-
-  cola_list.classList.add("cola-items");
-  cola_image.setAttribute("src", colaUrl);
-  cola_image.setAttribute("alt", "오리지널 콜라");
-  cola_name.classList.add("txt-item");
-  cola_name.innerText = name;
-  cola_count.classList.add("num-counter");
-  cola_count.innerText = "1";
-  cola_list.appendChild(cola_image);
-  cola_list.appendChild(cola_name);
-  cola_list.appendChild(cola_count);
-
-  listColaItemUl.appendChild(cola_list);
-};
-
-const countPlus = (drinkName) => {};
-
-const soldOutCheck = (drinkName, itemLi) => {
-  colaData.forEach((coladata) => {
-    // console.log(coladata.colaName);
-    // console.log(coladata.sellcount);
-    if (coladata.colaName === drinkName) {
-      if (coladata.count >= 0) {
-        coladata.count--;
-        // console.log(coladata.count);
-      }
-      if (coladata.count === 0) {
-        itemLi.classList.add("sold-out");
+        listColaItemUl.appendChild(cola_list);
+      } else if (drink[name].sellcount > 1) {
+        console.log(drinkName);
+        const countNum = document.querySelector(".num-counter");
+        countNum.innerText = drink[name].sellcount;
       }
     }
-  });
-};
 
-function onInput() {
-  // const listInput = document.getElementsByClassName("list-input")[0].value;
-  //   const listInput = document.querySelector(".list-input").value;
-  listInput.value;
-  // console.log(listInput);
-}
+    drink[name].sellcount++;
+    console.log("count : ", drink[name].count);
+    drink[name].count--;
+    if (drink[name].count < 0) {
+      drinkLi.childNodes[1].classList.add("sold-out");
+      drink[name].count = 0;
+    }
+  });
+});
