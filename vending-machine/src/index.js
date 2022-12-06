@@ -1,4 +1,4 @@
-// import cola from "./cola.js";
+import drink from "./drink.js";
 // console.log(cola[0]);
 
 let colaData = [
@@ -40,9 +40,9 @@ let colaData = [
   },
 ];
 
-const myMoney = document.querySelector(".txt-mymoney");
-const listInput = document.querySelector(".list-input");
-const colaName = document.querySelectorAll(".cola-name");
+const myMoney = document.querySelector(".txt-mymoney"); //가지고 있는 소지금
+const listInput = document.querySelector(".list-input"); //입금액 입력
+// const colaName = document.querySelectorAll(".cola-name");
 
 const depositBtn = document.querySelector(".list-btn.deposit"); //입금버튼
 const returnBtn = document.querySelector(".list-btn.return"); //거스름돈 반환 버튼
@@ -54,14 +54,37 @@ const machineDrinkList = document.querySelectorAll(".list-ul li"); //음료
 
 let userMoney = 50000; //초기 소지금
 
-let countMoney = 0; //잔액
+let countMoney = 0; //현재잔액
 
 let allMoney = 0; //총금액
+
+//소지금
+myMoney.innerText = userMoney;
+
+//입금액
+depositBtn.addEventListener("click", () => {
+  let inpDeposit = parseInt(listInput.value);
+  let check = /^[0-9]+$/; // 숫자인지 확인
+  if (check.test(inpDeposit)) {
+    countMoney += inpDeposit;
+    balance.innerText = countMoney;
+    listInput.value = ""; //input창에 남은 금액 없애기
+
+    userMoney -= inpDeposit; //소지금 변화
+    myMoney.innerText = userMoney;
+  }
+});
 
 //음료 클릭시 list 입력
 machineDrinkList.forEach((drinkLi) => {
   drinkLi.addEventListener("click", (e) => {
-    const drinkName = drinkLi.dataset.drinkName;
+    const { drinkName, price, count } = e.target.dataset;
+    console.log("drinkName", drinkName);
+    console.log("name", drink[drinkName]);
+    // console.log(name);
+    // console.log(price);
+    // console.log(count);
+    // const drinkName = drinkLi.dataset.drinkName;
     // const drinkCount = colaData.sellcount;
 
     const itemLi = drinkLi.childNodes[1];
@@ -113,16 +136,12 @@ const createDrink = (name) => {
   const colaUrl = `/vending-machine/images/${name}.svg`;
 
   cola_list.classList.add("cola-items");
-
   cola_image.setAttribute("src", colaUrl);
   cola_image.setAttribute("alt", "오리지널 콜라");
-
   cola_name.classList.add("txt-item");
   cola_name.innerText = name;
-
   cola_count.classList.add("num-counter");
   cola_count.innerText = "1";
-
   cola_list.appendChild(cola_image);
   cola_list.appendChild(cola_name);
   cola_list.appendChild(cola_count);
