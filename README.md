@@ -13,13 +13,33 @@
 - JavsScript로 기능을 구현했습니다.
 
 🌱**스킬 및 사용툴**
-## weniv_login
-🔗[배포 URL](https://leeyeun.github.io/weniv_project/weniv_login/)
 
+
+## weniv_login
+<img width="670" alt="image" src="https://user-images.githubusercontent.com/84389307/206338824-40be79a1-620f-4312-bc34-687b413ebca2.png">
+
+🔗[배포 URL](https://leeyeun.github.io/weniv_project/weniv_login/)
+🗓️**작업기간** : 2022.04
+
+👨‍💻 **투입인원** : 1명
+
+📒**주요업무**
+
+
+🌱**스킬 및 사용툴**
 
 ## 드롭박스
-🔗[배포 URL](https://leeyeun.github.io/weniv_project/dropdown-selectbox/)
+<img width="633" alt="image" src="https://user-images.githubusercontent.com/84389307/206338915-37b61c4a-0fab-4dcb-b02a-93fe82f40cbd.png">
 
+🔗[배포 URL](https://leeyeun.github.io/weniv_project/dropdown-selectbox/)
+🗓️**작업기간** : 2022.04
+
+👨‍💻 **투입인원** : 1명
+
+📒**주요업무**
+
+
+🌱**스킬 및 사용툴**
 
 
 
