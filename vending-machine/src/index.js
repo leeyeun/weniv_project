@@ -49,8 +49,9 @@ const returnBtn = document.querySelector(".list-btn.return"); //거스름돈 반
 const getBtn = document.querySelector(".btn-submit"); //획득 버튼
 const balance = document.querySelector(".txt-balance"); //잔액
 const total = document.querySelector("sumPrice"); //총금액 버튼
-
+// const cola_list = document.createElement("li");
 const machineDrinkList = document.querySelectorAll(".list-ul li"); //음료
+// const colaLi = document.querySelectorAll(".clist-item-staged ");
 
 let userMoney = 50000; //초기 소지금
 
@@ -93,6 +94,8 @@ returnBtn.addEventListener("click", () => {
   }
 });
 
+let cart = [];
+
 //콜라 버튼
 machineDrinkList.forEach((drinkLi) => {
   drinkLi.addEventListener("click", (e) => {
@@ -110,12 +113,14 @@ machineDrinkList.forEach((drinkLi) => {
       const cola_count = document.createElement("span");
       const colaUrl = `/weniv_project/vending-machine/images/${name}.svg`;
       if (drink[name].sellcount === 1) {
+        cart.push({ drinkName: name, sellCount: drink[name].sellcount });
+        console.log(cart);
         cola_list.classList.add("cola-items");
         cola_list.setAttribute("data-name", name);
         cola_list.setAttribute("data-price", drink[name].price);
         cola_list.setAttribute("data-sellcount", drink[name].sellcount);
         cola_image.setAttribute("src", colaUrl);
-        cola_image.setAttribute("alt", "오리지널 콜라");
+        cola_image.setAttribute("alt", name);
         cola_name.classList.add("txt-item");
         cola_name.innerText = name;
         cola_count.classList.add("num-counter");
@@ -126,6 +131,20 @@ machineDrinkList.forEach((drinkLi) => {
 
         listColaItemUl.appendChild(cola_list);
       } else if (drink[name].sellcount > 1) {
+        // cart.push({ drinkName: name, sellCount: drink[name].sellcount });
+        for (let i = 0; i < cart.length; i++) {
+          if (cart[i].drinkName === name) {
+            cart[i].sellCount = drink[name].sellcount;
+          }
+        }
+
+        console.log(cart);
+        // let newCart = cart.filter(
+        //   (arr, index, callback) =>
+        //     index === callback.findIndex((t) => t.drinkName === arr.drinkName)
+        // );
+        // // cart
+        // console.log(newCart);
         const countNum = document.querySelector(".num-counter");
         countNum.innerText = drink[name].sellcount;
       }
@@ -142,34 +161,34 @@ machineDrinkList.forEach((drinkLi) => {
     }
   });
 });
+// console.log(cart[0]);
 
 //획득
 getBtn.addEventListener("click", (e) => {
   const getItemList = document.querySelector(".list-get-item-staged");
-  for (let i = 0; i < listColaItemUl.childNodes.length; i++) {
-    // console.log(getItemList.appendChild(listColaItemUl.childNodes));
-    // getItemList.insertAdjacentElement(listColaItemUl.childNodes);
-    const name = e.currentTarget.dataset;
-    console.log(e.currentTarget);
-    console.log(e.target);
-    // const cola_list = document.createElement("li");
-    //   const cola_image = document.createElement("img");
-    //   const cola_name = document.createElement("span");
-    //   const cola_count = document.createElement("span");
-    //   const colaUrl = `/vending-machine/images/${name}.svg`;
-    //     cola_list.classList.add("cola-items");
-    //     cola_image.setAttribute("src", colaUrl);
-    //     cola_image.setAttribute("alt", "오리지널 콜라");
-    //     cola_name.classList.add("txt-item");
-    //     cola_name.innerText = name;
-    //     cola_count.classList.add("num-counter");
-    //     cola_count.innerText = drink[name].sellcount;
-    //     cola_list.appendChild(cola_image);
-    //     cola_list.appendChild(cola_name);
-    //     cola_list.appendChild(cola_count);
+  for (let i = 0; i < cart.length; i++) {
+    const cola_list = document.createElement("li");
+    const cola_image = document.createElement("img");
+    const cola_name = document.createElement("span");
+    const cola_count = document.createElement("span");
+    const colaUrl = `/vending-machine/images/${cart[i].drinkName}.svg`;
+    cola_list.classList.add("cola-items");
+    cola_image.setAttribute("src", colaUrl);
+    cola_image.setAttribute("alt", cart[i].drinkName);
+    cola_name.classList.add("txt-item");
+    cola_name.innerText = cart[i].drinkName;
+    cola_count.classList.add("num-counter");
+    cola_count.innerText = cart[i].sellCount;
+    cola_list.appendChild(cola_image);
+    cola_list.appendChild(cola_name);
+    cola_list.appendChild(cola_count);
 
-    //     listColaItemUl.appendChild(cola_list);
+    getItemList.appendChild(cola_list);
   }
+  cart = [];
+  console.log(cart);
+  console.log(listColaItemUl);
+  listColaItemUl.innerHTML = "";
   //총금액
   allMoney += plusMoney;
   const totalMoney = document.querySelector(".total-money");
