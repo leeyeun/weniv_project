@@ -108,7 +108,7 @@ machineDrinkList.forEach((drinkLi) => {
       const cola_image = document.createElement("img");
       const cola_name = document.createElement("span");
       const cola_count = document.createElement("span");
-      const colaUrl = `/vending-machine/images/${name}.svg`;
+      const colaUrl = `/weniv_project/vending-machine/images/${name}.svg`;
       if (drink[name].sellcount === 1) {
         cola_list.classList.add("cola-items");
         cola_list.setAttribute("data-name", name);
