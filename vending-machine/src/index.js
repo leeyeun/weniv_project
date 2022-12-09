@@ -171,7 +171,7 @@ getBtn.addEventListener("click", (e) => {
     const cola_image = document.createElement("img");
     const cola_name = document.createElement("span");
     const cola_count = document.createElement("span");
-    const colaUrl = `/vending-machine/images/${cart[i].drinkName}.svg`;
+    const colaUrl = `/weniv_project/vending-machine/images/${cart[i].drinkName}.svg`;
     cola_list.classList.add("cola-items");
     cola_image.setAttribute("src", colaUrl);
     cola_image.setAttribute("alt", cart[i].drinkName);
