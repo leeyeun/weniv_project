@@ -2,7 +2,7 @@
 
 🔗[배포 URL](https://leeyeun.github.io/weniv_project/vending-machine/src/index.html)
 
-<img width="903" alt="image" src="https://user-images.githubusercontent.com/84389307/206337777-42c2079c-0daa-4b41-b9c6-ab5760efc642.png">
+<img width="863" alt="image" src="https://user-images.githubusercontent.com/84389307/206640781-19c34e83-88b4-42dc-8ed3-9244079b216f.png">
 
 
 
