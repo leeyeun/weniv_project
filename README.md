@@ -16,7 +16,9 @@
 - JavsScript로 기능을 구현했습니다.
 
 🌱**스킬 및 사용툴**
-
+![HTML](https://img.shields.io/badge/HTML-%23E34F26.svg?style=flat-square&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-%231572B6.svg?style=flat-square&logo=css3&logoColor=white) 
+![JavaScript](https://img.shields.io/badge/JavaScript-%231572B6.svg?style=flat-square&logo=javascript&logoColor=white) 
 
 ## weniv_login
 
